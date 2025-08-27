@@ -1,5 +1,5 @@
 import org.example.ConsoleLogger;
-import org.example.ILogger;
+import org.example.Logger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,7 +28,7 @@ class ConsoleLoggerTest {
 
     @Test
     void shouldLogMessageToConsole() {
-        ILogger logger = new ConsoleLogger();
+        Logger logger = new ConsoleLogger();
         String message = "This is a test message.";
 
         logger.log(message);

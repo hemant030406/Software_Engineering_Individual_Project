@@ -1,4 +1,4 @@
-import org.example.ILogger;
+import org.example.Logger;
 import org.example.NetworkLogger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -23,7 +23,7 @@ class NetworkLoggerTest {
 
     @Test
     void shouldFormatLogMessageWithHostAndPort() {
-        ILogger logger = new NetworkLogger("log.server.com", 5000);
+        Logger logger = new NetworkLogger("log.server.com", 5000);
         logger.log("User logged in");
 
         assertThat(out.toString().trim())

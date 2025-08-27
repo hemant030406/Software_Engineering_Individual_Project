@@ -1,5 +1,5 @@
 import org.example.FileLogger;
-import org.example.ILogger;
+import org.example.Logger;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -18,7 +18,7 @@ class FileLoggerTest {
     @Test
     void shouldWriteAndAppendLogMessagesToFile() throws IOException {
         Path logFile = tempDir.resolve("test.log");
-        ILogger logger = new FileLogger(logFile.toString());
+        Logger logger = new FileLogger(logFile.toString());
         String message1 = "First line.";
         String message2 = "Second line.";
 

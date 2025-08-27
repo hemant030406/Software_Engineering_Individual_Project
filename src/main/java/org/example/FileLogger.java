@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 /**
  * An implementation of Logger that appends messages to a specified file.
  */
-public class FileLogger implements ILogger {
+public class FileLogger implements Logger {
     /**
      * The path to the log file where messages will be written.
      */

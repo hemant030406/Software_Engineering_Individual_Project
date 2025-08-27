@@ -3,7 +3,7 @@ package org.example;
 /**
  * Simulates sending log messages over a network.
  */
-public class NetworkLogger implements ILogger {
+public class NetworkLogger implements Logger {
     /**
      * Stores the host name.
      */

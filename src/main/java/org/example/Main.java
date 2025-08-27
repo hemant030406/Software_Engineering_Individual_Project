@@ -7,20 +7,27 @@ package org.example;
 public class Main {
     /**
      * The primary entry point for the application.
-     *
+     * It shows the dependency inversion principle.
+     * The userService doesn't need to know the type of the logger,
+     * it's implementation doesn't need to change based on the logger type.
      * @param args Command-line arguments (not used in this application).
      */
     public static void main(final String[] args) {
-        final Logger consoleLogger = new ConsoleLogger();
-        consoleLogger.log("Hello World!");
+        Logger logger = new ConsoleLogger();
+        UserService userService = new UserService(logger);
+        userService.createUser("JOE");
 
-        final Logger fileLogger = new FileLogger("./fileLog.txt");
-        fileLogger.log("Hello World!");
+        logger = new FileLogger("./fileLog.txt");
+        userService = new UserService(logger);
+        userService.createUser("JOE");
 
-        final Logger networkLogger = new NetworkLogger("log.server.com", 8000);
-        networkLogger.log("Hello World!");
+        final int port = 8000;
+        logger = new NetworkLogger("log.server.com", port);
+        userService = new UserService(logger);
+        userService.createUser("JOE");
 
-        final Logger nullLogger = new NullLogger();
-        nullLogger.log("Hello World!");
+        logger = new NullLogger();
+        userService = new UserService(logger);
+        userService.createUser("JOE");
     }
 }

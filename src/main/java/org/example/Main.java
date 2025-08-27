@@ -17,8 +17,8 @@ public class Main {
         final ILogger fileLogger = new FileLogger("./fileLog.txt");
         fileLogger.log("Hello World!");
 
-        final ILogger newtworkLogger = new NetworkLogger("log.server.com", 8000);
-        newtworkLogger.log("Hello World!");
+        final ILogger networkLogger = new NetworkLogger("log.server.com", 8000);
+        networkLogger.log("Hello World!");
 
         final ILogger nullLogger = new NullLogger();
         nullLogger.log("Hello World!");

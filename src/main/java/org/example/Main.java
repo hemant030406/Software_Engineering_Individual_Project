@@ -13,21 +13,6 @@ public class Main {
      * @param args Command-line arguments (not used in this application).
      */
     public static void main(final String[] args) {
-        Logger logger = new ConsoleLogger();
-        UserService userService = new UserService(logger);
-        userService.createUser("JOE");
-
-        logger = new FileLogger("./fileLog.txt");
-        userService = new UserService(logger);
-        userService.createUser("JOE");
-
-        final int port = 8000;
-        logger = new NetworkLogger("log.server.com", port);
-        userService = new UserService(logger);
-        userService.createUser("JOE");
-
-        logger = new NullLogger();
-        userService = new UserService(logger);
-        userService.createUser("JOE");
+        // do nothing.
     }
 }
